@@ -1,4 +1,6 @@
-﻿namespace Array
+﻿using System.Linq;
+
+namespace Array
 {
     class XorArray : TArray
     {
@@ -7,23 +9,23 @@
         }
         public override int SumOfArr()
         {
-            int[] newArr = new int[myArray.Length + 1];
             for (int i = 0; i < myArray.Length; i++)
             {
-                newArr[i] = myArray[i];
-                sum = newArr[i] ^ newArr[i];
+                sum = myArray[i] ^ myArray[i]; 
             }
             return sum;
         }
         public override int[] Foreach()
         {
-            int[] newArr = new int[myArray.Length + 1];
+            var sorted = myArray.OrderBy(d => d);
+            double dataMax = sorted.First();
+            double dataMin = sorted.Last(); 
+            int[] newArr = new int[myArray.Length];
             for (int i = 0; i < myArray.Length; i++)
             {
                 newArr[i] = myArray[i];
             }
-            myArray = newArr;
-            return myArray;
+            return newArr;
         }
     }
 }

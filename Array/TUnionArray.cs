@@ -7,17 +7,15 @@
         }
         public override int SumOfArr()
         {
-            int[] newArr = new int[myArray.Length+1];
             for (int i = 0; i < myArray.Length; i++)
             {
-                newArr[i]= myArray[i];
-                sum |= newArr[i];   
+                sum |= myArray[i];   
             }
             return sum; 
         }   
         public override int[] Foreach()
         {
-            int[] newArr = new int[myArray.Length+1];
+            int[] newArr = new int[myArray.Length];
             for (int i = 0; i < myArray.Length; i++)
             {
                 newArr[i] = myArray[i];
